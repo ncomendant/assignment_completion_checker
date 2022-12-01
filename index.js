@@ -1,5 +1,5 @@
-const gatewayUrl = 'http://localhost:3023';
-const entries = [];
+const gatewayUrl = 'https://buildbright.io:3023';
+const entryIds = [];
 
 async function update(section, assignments, token) {
     const params = new URLSearchParams({
@@ -16,9 +16,9 @@ async function update(section, assignments, token) {
     });
     const data = await res.json();
     for (const entry of data) {
-        if (!entries.includes(entry)) {
+        if (!entryIds.some(id => id === entry.id)) {
             document.body.innerHTML = document.body.innerHTML + `<div>${entry.nickname || entry.forename} ${entry.surname[0]}.</div>`;
-            entries.push(entry);
+            entryIds.push(entry.id);
         }
     }
 }
