@@ -1,0 +1,37 @@
+html, body {
+    background-color: navy;
+    font-size: 120%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.update {
+    background-color: lightgray;
+    display: inline-block;
+    padding: 1em;
+    border-radius: 2em;
+    font-weight: bold;
+}
+
+.names {
+    margin-top: 1em;
+}
+
+.entry {
+    background-color: lightgray;
+    display: inline-block;
+    padding: 1em;
+    margin: 0.1em;
+    border-radius: 2em;
+    font-weight: bold;
+}
+
+.hidden {
+    visibility: hidden;
+}
