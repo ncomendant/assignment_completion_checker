@@ -1,4 +1,5 @@
-const gatewayUrl = 'https://buildbright.io:3023';
+const gatewayUrl = 'https://complete.buildbright.io';
+// const gatewayUrl = 'http://localhost:3017';
 const entryIds = [];
 const names = document.querySelector('.names');
 const updateLab = document.querySelector('.update');
