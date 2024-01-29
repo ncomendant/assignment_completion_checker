@@ -4,10 +4,11 @@ const entryIds = [];
 const names = document.querySelector('.names');
 const updateLab = document.querySelector('.update');
 
-async function update(section, assignments, token) {
+async function update(section, assignments, token, exclude) {
     const params = new URLSearchParams({
         section,
         assignments,
+        exclude: exclude == 'true' ? true : false,
     });
     const url = `${gatewayUrl}/completions?` + params;
     updateLab.classList.remove('hidden');
@@ -40,9 +41,10 @@ async function init() {
     const params = new URLSearchParams(location.search);
     const section = params.get('section');
     const assignments = params.get('assignments');
+    const exclude = params.get('exclude');
     const token = localStorage.getItem('token');
     while (true) {
-        await update(section, assignments, token);
+        await update(section, assignments, token, exclude);
         await wait(30000);
     }
 }
